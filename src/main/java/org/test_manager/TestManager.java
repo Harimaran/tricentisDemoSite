@@ -1,6 +1,9 @@
 package org.test_manager;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -10,7 +13,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class TestManager {
     public static WebDriver driver;
 
-    @BeforeTest
+    @Before
     public WebDriver getWebInstance(){
         if(driver == null) {
             WebDriverManager.chromedriver().setup();
@@ -21,7 +24,7 @@ public class TestManager {
         return driver;
     }
 
-    @AfterSuite
+    @After
     public void closeWebInstance(){
         driver.close();
     }

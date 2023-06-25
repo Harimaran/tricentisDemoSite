@@ -7,10 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.test_manager.TestManager;
 
-public class HomePage extends TestManager{
+public class HomePage extends TestManager {
 
-    public HomePage(){
-
+    public HomePage() {
         PageFactory.initElements(TestManager.driver, this);
     }
 
@@ -41,7 +40,6 @@ public class HomePage extends TestManager{
     @FindBy(xpath = "//ul[@class='top-menu']//a[@href='/electronics']/ancestor::li/descendant::li[2]/a")
     public WebElement headerCellPhone;
 
-
     @FindBy(xpath = "//ul[@class='top-menu']//li//a[@href='/apparel-shoes']")
     public WebElement headerApparelAndShoes;
 
@@ -54,53 +52,54 @@ public class HomePage extends TestManager{
     @FindBy(xpath = "//ul[@class='top-menu']//li//a[@href='/gift-cards']")
     public WebElement headerGiftCards;
 
-    public BooksPage gotoBooks(){
+    public BooksPage gotoBooks() {
         headerBook.click();
         return new BooksPage();
     }
-    public void gotoDesktops(){
+
+    public void gotoDesktops() {
         Actions action = new Actions(TestManager.driver);
         action.moveToElement(headerComputers).perform();
         headerDesktops.click();
     }
 
-    public void gotoNoteBooks(){
+    public void gotoNoteBooks() {
         Actions action = new Actions(TestManager.driver);
         action.moveToElement(headerComputers).perform();
         headerNoteBooks.click();
     }
 
-    public void gotoAccessories(){
+    public void gotoAccessories() {
         Actions action = new Actions(TestManager.driver);
         action.moveToElement(headerComputers).perform();
         headerAccessories.click();
     }
 
-    public void gotoCamera(){
+    public void gotoCamera() {
         Actions action = new Actions(driver);
         action.moveToElement(headerElectronics).build().perform();
         action.moveToElement(headerCamera).click().build().perform();
     }
 
-    public void gotoCellPhones(){
+    public void gotoCellPhones() {
         Actions action = new Actions(driver);
         action.moveToElement(headerElectronics).build().perform();
         action.moveToElement(headerCellPhone).click().build().perform();
     }
 
-    public void gotoApparel(){
+    public void gotoApparel() {
         headerApparelAndShoes.click();
     }
 
-    public void gotoJewelry(){
+    public void gotoJewelry() {
         headerJewelry.click();
     }
 
-    public void gotoGiftCards(){
+    public void gotoGiftCards() {
         headerGiftCards.click();
     }
 
-    public LogInPage clickLogin(){
+    public LogInPage clickLogin() {
         login.click();
         return new LogInPage();
     }
